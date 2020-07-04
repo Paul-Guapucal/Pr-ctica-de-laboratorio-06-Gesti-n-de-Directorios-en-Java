@@ -5,19 +5,44 @@
  */
 package ec.edu.ups.vista;
 
+import ec.edu.ups.controlador.ControladorDirectorios;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author paul_
  */
-public class VistaPrincipal extends javax.swing.JFrame {
+public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private ControladorDirectorios controladorDirectorios;
+    
     /**
      * Creates new form VistaPrincipal
      */
-    public VistaPrincipal() {
+    public VentanaPrincipal() {
         initComponents();
+        controladorDirectorios = new ControladorDirectorios();
+        
     }
 
+    public void llenarLista(List<String> directorios){
+        DefaultListModel modelo = new DefaultListModel();
+        modelo.clear();
+        
+        for(String nombre : directorios){
+            modelo.addElement(nombre);
+        }
+        lista.setModel(modelo);
+    }
+    
+    public void limpiarLista(){
+        DefaultListModel modelo = new DefaultListModel();
+        modelo.clear();
+        lista.setModel(modelo);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,7 +60,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnListarDirectoriosOcultos = new javax.swing.JButton();
         btnMostrarInformacion = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Lista = new javax.swing.JList<>();
+        lista = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtArea = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
@@ -58,25 +83,45 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         btnListarDirectorios.setBackground(new java.awt.Color(204, 255, 255));
         btnListarDirectorios.setText("Listar Directorios");
+        btnListarDirectorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarDirectoriosActionPerformed(evt);
+            }
+        });
         desktopPane.add(btnListarDirectorios);
         btnListarDirectorios.setBounds(70, 110, 140, 30);
 
         btnListarArchivosOcultos.setBackground(new java.awt.Color(204, 255, 255));
         btnListarArchivosOcultos.setText("Listar Archivos Ocultos");
+        btnListarArchivosOcultos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarArchivosOcultosActionPerformed(evt);
+            }
+        });
         desktopPane.add(btnListarArchivosOcultos);
         btnListarArchivosOcultos.setBounds(220, 110, 170, 30);
 
         btnListarDirectoriosOcultos.setBackground(new java.awt.Color(204, 255, 255));
         btnListarDirectoriosOcultos.setText("Listar Directorios Ocultos");
+        btnListarDirectoriosOcultos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarDirectoriosOcultosActionPerformed(evt);
+            }
+        });
         desktopPane.add(btnListarDirectoriosOcultos);
         btnListarDirectoriosOcultos.setBounds(400, 110, 180, 30);
 
         btnMostrarInformacion.setBackground(new java.awt.Color(204, 255, 255));
         btnMostrarInformacion.setText("Mostrar informacion");
+        btnMostrarInformacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarInformacionActionPerformed(evt);
+            }
+        });
         desktopPane.add(btnMostrarInformacion);
         btnMostrarInformacion.setBounds(100, 330, 180, 30);
 
-        jScrollPane1.setViewportView(Lista);
+        jScrollPane1.setViewportView(lista);
 
         desktopPane.add(jScrollPane1);
         jScrollPane1.setBounds(70, 160, 240, 160);
@@ -94,16 +139,31 @@ public class VistaPrincipal extends javax.swing.JFrame {
         btnCrear.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         btnCrear.setMnemonic('o');
         btnCrear.setText("Crear");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearActionPerformed(evt);
+            }
+        });
         btnGestionar.add(btnCrear);
 
         btnRenombrar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         btnRenombrar.setMnemonic('s');
         btnRenombrar.setText("Renombrar");
+        btnRenombrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRenombrarActionPerformed(evt);
+            }
+        });
         btnGestionar.add(btnRenombrar);
 
         btnEliminar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
         btnEliminar.setMnemonic('a');
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
         btnGestionar.add(btnEliminar);
 
         btnSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
@@ -140,6 +200,92 @@ public class VistaPrincipal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        
+        
+    }//GEN-LAST:event_btnCrearActionPerformed
+
+    private void btnRenombrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenombrarActionPerformed
+        
+        
+    }//GEN-LAST:event_btnRenombrarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnListarDirectoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDirectoriosActionPerformed
+        String ruta = txtRuta.getText();
+        if(ruta==null){
+            JOptionPane.showMessageDialog(this, "El campo de la ruta debe ser llenado");
+            
+        }else{
+            if(controladorDirectorios.validarRuta(ruta)){
+                List<String> directorios = controladorDirectorios.listarDirectorios(ruta);
+                if(directorios.isEmpty()){
+                    JOptionPane.showMessageDialog(this, "El directorio esta vacio");
+                    limpiarLista();
+                    
+                }else{
+                    llenarLista(directorios);
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "Ruta del directorio incorrecta");
+            }
+        }
+        
+    }//GEN-LAST:event_btnListarDirectoriosActionPerformed
+
+    private void btnListarArchivosOcultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArchivosOcultosActionPerformed
+        String ruta = txtRuta.getText();
+        if(ruta==null){
+            JOptionPane.showMessageDialog(this, "El campo de la ruta debe ser llenado");
+            
+        }else{
+            if(controladorDirectorios.validarRuta(ruta)){
+                List<String> directorios = controladorDirectorios.listarArchivosOcultos(ruta);
+                if(directorios.isEmpty()){
+                    JOptionPane.showMessageDialog(this, "No hay archivos ocultos");
+                    limpiarLista();
+                    
+                }else{
+                    llenarLista(directorios);
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "Ruta del directorio incorrecta");
+            }
+        }
+        
+    }//GEN-LAST:event_btnListarArchivosOcultosActionPerformed
+
+    private void btnListarDirectoriosOcultosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarDirectoriosOcultosActionPerformed
+        String ruta = txtRuta.getText();
+        if(ruta==null){
+            JOptionPane.showMessageDialog(this, "El campo de la ruta debe ser llenado");
+            
+        }else{
+            if(controladorDirectorios.validarRuta(ruta)){
+                List<String> directorios = controladorDirectorios.listarDirectoriosOcultos(ruta);
+                if(directorios.isEmpty()){
+                    JOptionPane.showMessageDialog(this, "El directorio oculto esta vacio");
+                    limpiarLista();
+                    
+                }else{
+                    llenarLista(directorios);
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, "Ruta del directorio incorrecta");
+            }
+        }
+        
+    }//GEN-LAST:event_btnListarDirectoriosOcultosActionPerformed
+
+    private void btnMostrarInformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarInformacionActionPerformed
+        
+        
+    }//GEN-LAST:event_btnMostrarInformacionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -157,26 +303,26 @@ public class VistaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaPrincipal().setVisible(true);
+                new VentanaPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> Lista;
     private javax.swing.JMenuItem btnCrear;
     private javax.swing.JMenuItem btnEliminar;
     private javax.swing.JMenu btnGestionar;
@@ -190,6 +336,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblRuta;
+    private javax.swing.JList<String> lista;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JTextArea txtArea;
     private javax.swing.JTextField txtRuta;
