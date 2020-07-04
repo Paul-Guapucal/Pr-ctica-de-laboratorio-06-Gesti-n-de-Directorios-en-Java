@@ -124,6 +124,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         desktopPane.add(btnMostrarInformacion);
         btnMostrarInformacion.setBounds(100, 330, 180, 30);
 
+        lista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(lista);
 
         desktopPane.add(jScrollPane1);
@@ -234,7 +239,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnRenombrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenombrarActionPerformed
-        
+        String renombre = null;
+        renombre = JOptionPane.showInputDialog("Ingrese el nuevo nombre del directorio");
+        if(renombre == null){
+            JOptionPane.showMessageDialog(this, "Agregue un nombre al directorio");
+            
+        }else{
+            String ruta = txtRuta.getText();
+            if(controladorDirectorios.validarRuta(ruta)){
+                String actual = lista.getSelectedValue();
+                controladorDirectorios.renombrar(ruta, renombre, renombre);
+                JOptionPane.showMessageDialog(this, "Nombre del directorio actualizado correctamente");
+                List<String> directorio = controladorDirectorios.listarDirectorios(ruta);
+                llenarLista(directorio);
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "La ruta ingresada no es correcta");
+            }
+        }
     }//GEN-LAST:event_btnRenombrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -346,6 +368,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtArea.setText(informacion);
         
     }//GEN-LAST:event_btnMostrarInformacionActionPerformed
+
+    private void listaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaMouseClicked
+        String nombre = lista.getSelectedValue();
+        btnMostrarInformacion.setEnabled(true);
+        System.out.println(nombre);
+    }//GEN-LAST:event_listaMouseClicked
 
     /**
      * @param args the command line arguments
