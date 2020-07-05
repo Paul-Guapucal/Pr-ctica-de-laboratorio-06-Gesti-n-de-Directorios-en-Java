@@ -37,7 +37,7 @@ Una interfaz en NetBeans que permitira realizar algunas acciones, como crear, el
 
 *•	Creación de una interfaz básica para la gestión de archivos dentro de una computadora, con un usuario que desee manejar sus archivos con una URL básica en la computadora.*
 
-*•	Usar de manera eficiente las herramientas del paquete (awt), las mismas que darán un buen diseño a la interfaz y será visible para cualquier tipo de Usuario. *
+*•	Usar de manera eficiente las herramientas del paquete (awt), las mismas que darán un buen diseño a la interfaz y será visible para cualquier tipo de Usuario.*
 
 **Conclusiones de la practica**
 
