@@ -14,15 +14,15 @@ Una interfaz en NetBeans que permitira realizar algunas acciones, como crear, el
 
 *2.1 Paquetes de la practica*
 
-[Paquetes de la Practica](
+[Paquetes de la Practica](https://github.com/Paul-Guapucal/Pr-ctica-de-laboratorio-06-Gesti-n-de-Directorios-en-Java/tree/master/src/ec/edu/ups)
 
 *2.1.1 Clase del paquete controlador*
 
-[Clase ControladorDirectorio](
+[Clase ControladorDirectorio](https://github.com/Paul-Guapucal/Pr-ctica-de-laboratorio-06-Gesti-n-de-Directorios-en-Java/blob/master/src/ec/edu/ups/controlador/ControladorDirectorios.java)
 
 *2.1.2 Clases del paquete vista*
 
-[Clase VentanaPrincipal](
+[Clase VentanaPrincipal](https://github.com/Paul-Guapucal/Pr-ctica-de-laboratorio-06-Gesti-n-de-Directorios-en-Java/blob/master/src/ec/edu/ups/vista/VentanaPrincipal.java)
 
 ![Interfaz de la VentanaPrincipal](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/ssVista.jpg)
 
