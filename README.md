@@ -31,7 +31,7 @@ Una interfaz en NetBeans que permitira realizar algunas acciones, como crear, el
 
 **3. Realizar varios commits en la herramienta GitHub que demuestren el desarrollo de la aplicación desde principio a fin.**
 
-![Commits realizados en la Practica](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/ssCommits.jpg)
+![Commits realizados en la Practica](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/ssCommits2.jpg)
 
 **Resultados obtenidos en la practica**
 
