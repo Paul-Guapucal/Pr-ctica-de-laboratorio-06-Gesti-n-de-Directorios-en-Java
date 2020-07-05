@@ -7,7 +7,8 @@ Una interfaz en NetBeans que permitira realizar algunas acciones, como crear, el
 **Items a desarrollar**
 
 **1. Crear un repositorio en GitHub con el nombre “Práctica de laboratorio 06: Gestión de Directorios en Java”.**
-![screan del respositorio](
+
+![screan del respositorio](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/ssRepositorio.jpg)
 
 **2. Desarrollar una aplicación que permita la gestión de Tickets de un parqueadero de vehículos según los requerimientos planteados en las instrucciones de la práctica.**
 
@@ -23,11 +24,11 @@ Una interfaz en NetBeans que permitira realizar algunas acciones, como crear, el
 
 [Clase VentanaPrincipal](
 
-![Interfaz de la VentanaPrincipal](
+![Interfaz de la VentanaPrincipal](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/ssVista.jpg)
 
 **3. Realizar varios commits en la herramienta GitHub que demuestren el desarrollo de la aplicación desde principio a fin.**
 
-![Commits realizados en la Practica](
+![Commits realizados en la Practica](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/ssCommits.jpg)
 
 **Resultados obtenidos en la practica**
 
@@ -44,4 +45,4 @@ Una interfaz en NetBeans que permitira realizar algunas acciones, como crear, el
 
 **Firma del estudiante**
 
-![firma del estudiante]
+![firma del estudiante](https://github.com/Paul-Guapucal/Screen-Practica06/blob/master/Screen%20firma.jpg)
